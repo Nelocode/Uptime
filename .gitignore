@@ -1,0 +1,10 @@
+# Datos persistentes de Uptime Kuma (no commitear base de datos sqlite ni configuraciones privadas)
+uptime-kuma-data/
+
+# Datos y certificados de Caddy
+caddy_data/
+caddy_config/
+
+# Sistema
+.DS_Store
+*.log

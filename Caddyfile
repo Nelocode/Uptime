@@ -1,0 +1,5 @@
+# Cambia "status.7secmedia.com" por tu dominio o subdominio real
+# Caddy generará y renovará automáticamente el certificado SSL (HTTPS) de Let's Encrypt.
+status.7secmedia.com {
+    reverse_proxy uptime-kuma:3001
+}

@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    restart: always
+    volumes:
+      - ./uptime-kuma-data:/app/data
+      # Reemplazo de iconos y branding para el panel
+      - ./logo.png:/app/dist/icon.png:ro
+      - ./logo.png:/app/dist/icon-192.png:ro
+      - ./logo.png:/app/dist/icon-512.png:ro
+      - ./logo.png:/app/dist/apple-touch-icon.png:ro
+    ports:
+      - "3001:3001"
+    environment:
+      - UPTIME_KUMA_PORT=3001
+
+  # Caddy opcional para SSL automático con tu dominio (descomenta si quieres SSL automático sin configurar Nginx)
+  # caddy:
+  #   image: caddy:latest
+  #   container_name: uptime-kuma-ssl
+  #   restart: always
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - ./Caddyfile:/etc/caddy/Caddyfile:ro
+  #     - ./caddy_data:/data
+  #     - ./caddy_config:/config
+  #   depends_on:
+  #     - uptime-kuma
