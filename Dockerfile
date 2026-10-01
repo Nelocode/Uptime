@@ -1,5 +1,5 @@
-# Imagen base oficial de Uptime Kuma
-FROM louislam/uptime-kuma:1
+# Imagen base oficial de Uptime Kuma v2 (versión moderna recomendada)
+FROM louislam/uptime-kuma:2
 
 # Hornear el logotipo oficial de 7 SEC MEDIA directamente en la imagen
 COPY logo.png /app/dist/icon.png
